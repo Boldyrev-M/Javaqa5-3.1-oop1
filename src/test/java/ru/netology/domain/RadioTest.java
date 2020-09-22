@@ -34,9 +34,6 @@ class RadioTest {
         Radio radioSetDefault = new Radio();
         assertEquals(9, radioSetDefault.getMaxStation());
 
-        Radio radioSSetOverMax = new Radio(2000);
-        assertEquals(2000, radioSSetOverMax.getMaxStation());
-
     }
 
 

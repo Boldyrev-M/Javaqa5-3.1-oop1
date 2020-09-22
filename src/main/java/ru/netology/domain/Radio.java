@@ -12,7 +12,7 @@ public class Radio {
     }
 
     public Radio(int maxStation) {
-        if (maxStation < 0) return;
+       // if (maxStation < 0) return;
        // if (maxStation > 1000) return;
         this.maxStation = maxStation;
     }
