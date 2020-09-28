@@ -36,9 +36,20 @@ class RadioTest {
 
         Radio radioSSetOverMax = new Radio(2000);
         assertEquals(2000, radioSSetOverMax.getMaxStation());
+        Radio radioNegative = new Radio(-5);
+        assertEquals(9, radioNegative.getMaxStation());
+
 
     }
 
+    @Test
+    void setOnOff() {
+        Radio radioSet = new Radio();
+        assertFalse(radioSet.isOn());
+        radioSet.setOn(true);
+        assertTrue(radioSet.isOn());
+
+    }
 
     @Test
     void increaseVolume() {
@@ -47,7 +58,7 @@ class RadioTest {
         radioSet.increaseVolume();
         assertEquals(16, radioSet.getVolume());
 
-        radioSet.setVolume(radioSet.getMaxVolume()-1);
+        radioSet.setVolume(radioSet.getMaxVolume() - 1);
         radioSet.increaseVolume();
         radioSet.increaseVolume();
         radioSet.increaseVolume();
@@ -80,7 +91,7 @@ class RadioTest {
     @Test
     void nextStation() {
         Radio radioSet = new Radio();
-        radioSet.setStation(radioSet.getMaxStation()-1);
+        radioSet.setStation(radioSet.getMaxStation() - 1);
         radioSet.nextStation();
         radioSet.nextStation();
         radioSet.nextStation();
@@ -96,6 +107,6 @@ class RadioTest {
         radioSet.prevStation();
         radioSet.prevStation();
         radioSet.prevStation();
-        assertEquals(radioSet.getMaxStation()-1,radioSet.getStation());
+        assertEquals(radioSet.getMaxStation() - 1, radioSet.getStation());
     }
 }
